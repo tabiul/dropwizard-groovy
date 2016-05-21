@@ -1,6 +1,5 @@
 import io.dropwizard.Application
 import io.dropwizard.assets.AssetsBundle
-import io.dropwizard.server.DefaultServerFactory
 import io.dropwizard.setup.Bootstrap
 import io.dropwizard.setup.Environment
 
@@ -21,7 +20,6 @@ class HelloApplication extends Application<HelloConfiguration> {
 
     @Override
     def void run(HelloConfiguration configuration, Environment environment) throws Exception {
-        ((DefaultServerFactory)configuration.getServerFactory()).setJerseyRootPath("/api")
         environment.jersey().register(new HelloWorldResource(configuration.template, configuration.defaultName));
         environment.healthChecks().register("template", new TemplateHealthCheck())
     }
