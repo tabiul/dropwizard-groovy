@@ -1,0 +1,16 @@
+<html ng-app="helloApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="assets/js/controller.js"></script>
+
+</head>
+<body>
+  <div ng-controller="HelloCtrl">
+     <label>Name: </label> <input ng-model="name" />
+     <button ng-click="sayHello()">SayHello</button>
+      <div>
+         <span>{{result}}</span>
+      </div>
+  </div>
+</body>
+</html>
